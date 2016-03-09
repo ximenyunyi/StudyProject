@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yyty.hao.studyproject.R;
-import com.yyty.hao.studyproject.abstracts.IBaseAdapter;
+import com.yyty.hao.studyproject.abstracts.ABaseAdapter;
 import com.yyty.hao.studyproject.holder.ViewHolder;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  *   首页适配器
  */
-public class MainAdapter extends IBaseAdapter<Object> {
+public class MainAdapter extends ABaseAdapter<Object> {
 
     public MainAdapter(Context context, List<Object> data) {
         super(context, data);

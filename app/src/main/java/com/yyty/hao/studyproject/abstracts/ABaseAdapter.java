@@ -12,7 +12,7 @@ import java.util.logging.Handler;
 /**
  * @param <T>通用适配器
  */
-public class IBaseAdapter<T> extends BaseAdapter {
+public class ABaseAdapter<T> extends BaseAdapter {
 
     /**
      * 数据源
@@ -33,7 +33,7 @@ public class IBaseAdapter<T> extends BaseAdapter {
      * @param context 一般构造
      * @param data
      */
-    public IBaseAdapter(Context context,List<T> data) {
+    public ABaseAdapter(Context context, List<T> data) {
         this.context=context;
         this.data=data;
     }
@@ -41,7 +41,7 @@ public class IBaseAdapter<T> extends BaseAdapter {
     /**
      * @param context 带消息的构造
      */
-    public IBaseAdapter(Context context,List<T> data,Handler handler) {
+    public ABaseAdapter(Context context, List<T> data, Handler handler) {
         this.context = context;
         this.data = data;
         this.handler = handler;

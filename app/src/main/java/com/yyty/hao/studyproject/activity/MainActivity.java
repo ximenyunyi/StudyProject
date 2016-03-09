@@ -6,11 +6,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.yyty.hao.studyproject.R;
-import com.yyty.hao.studyproject.abstracts.BaseActivity;
+import com.yyty.hao.studyproject.abstracts.ABaseActivity;
 import com.yyty.hao.studyproject.adapter.MainAdapter;
 import com.yyty.hao.studyproject.view.TopView;
 
-public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
 
     private ListView lv;
 
@@ -23,8 +23,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     @Override
-    public void initData() {
-
+    public void initData()  {
     }
 
     @Override
@@ -46,7 +45,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     @Override
     public void initAdapterData() {
         super.initAdapterData();
-        data.add("动态代理");
+        data.add("工厂模式");
         adapter = new MainAdapter(this, data);
         lv.setAdapter(adapter);
 

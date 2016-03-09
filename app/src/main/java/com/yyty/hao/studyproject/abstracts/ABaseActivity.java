@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * activity基类
  */
-public abstract class BaseActivity extends Activity {
+public abstract class ABaseActivity extends Activity {
 
     /**
      * 适配器数据源
