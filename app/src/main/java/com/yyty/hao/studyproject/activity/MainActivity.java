@@ -1,6 +1,7 @@
 package com.yyty.hao.studyproject.activity;
 
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -45,7 +46,7 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
     @Override
     public void initAdapterData() {
         super.initAdapterData();
-        data.add("工厂模式");
+        data.add("设计模式");
         adapter = new MainAdapter(this, data);
         lv.setAdapter(adapter);
 
@@ -53,6 +54,11 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position){
+            case 0:
 
+                startActivity(new Intent(this,PatternActivity.class));
+                break;
+        }
     }
 }
