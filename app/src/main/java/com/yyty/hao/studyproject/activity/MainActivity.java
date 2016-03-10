@@ -13,8 +13,13 @@ import com.yyty.hao.studyproject.view.TopView;
 public class MainActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
     //this is a listView write by Gao
     private ListView lv;
-
+    //this is a adapter
     private MainAdapter adapter;
+
+    /**
+     * 浩哥大帅比！！！！！！！！！！！！！！！！！！！！！！！！！！！
+     *
+     */
 
     @Override
     public void initView() {
