@@ -1,4 +1,4 @@
-package com.yyty.hao.studyproject.ImplAbst;
+package com.yyty.hao.studyproject.ImplA;
 
 import com.yyty.hao.studyproject.abstracts.AFactory;
 import com.yyty.hao.studyproject.abstracts.APattern;
