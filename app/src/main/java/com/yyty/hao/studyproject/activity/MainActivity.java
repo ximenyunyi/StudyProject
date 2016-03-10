@@ -11,7 +11,7 @@ import com.yyty.hao.studyproject.adapter.MainAdapter;
 import com.yyty.hao.studyproject.view.TopView;
 
 public class MainActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
-
+    //this is a listView write by Gao
     private ListView lv;
 
     private MainAdapter adapter;
