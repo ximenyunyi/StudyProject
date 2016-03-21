@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自适应宽高控件参数-->
+    <declare-styleable name="SelfAdaptionView">
+        <attr name="proportion" format="float" />
+    </declare-styleable>
+</resources>
