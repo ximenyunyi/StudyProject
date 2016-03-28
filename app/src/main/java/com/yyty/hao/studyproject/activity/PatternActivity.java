@@ -3,7 +3,6 @@ package com.yyty.hao.studyproject.activity;
 
 import com.yyty.hao.studyproject.R;
 import com.yyty.hao.studyproject.abstracts.ABaseActivity;
-import com.yyty.hao.studyproject.enums.JudgmentEnum;
 import com.yyty.hao.studyproject.view.TopView;
 
 /**
