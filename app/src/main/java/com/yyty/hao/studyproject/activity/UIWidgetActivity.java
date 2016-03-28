@@ -1,7 +1,6 @@
 package com.yyty.hao.studyproject.activity;
 
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -11,25 +10,21 @@ import com.yyty.hao.studyproject.abstracts.ABaseActivity;
 import com.yyty.hao.studyproject.adapter.MainAdapter;
 import com.yyty.hao.studyproject.view.TopView;
 
-public class MainActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
-    //this is a listView write by Gao
-    private ListView lv;
-    //this is a adapter
-    private MainAdapter adapter;
+public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
 
-    /**
-     * 浩哥大帅比！！！！！！！！！！！！！！！！！！！！！！！！！！！
-     *
-     */
+    private ListView lv;
+
+    private MainAdapter adapter;
 
     @Override
     public void initView() {
-        topView = (TopView) this.findViewById(R.id.top_view);
-        lv = (ListView) this.findViewById(R.id.lv);
+        lv= (ListView) this.findViewById(R.id.lv);
+        topView= (TopView) this.findViewById(R.id.top_view);
     }
 
     @Override
-    public void initData()  {
+    public void initData() {
+
     }
 
     @Override
@@ -39,23 +34,20 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
 
     @Override
     public int getLayoutId() {
-        return R.layout.act_main;
+        return R.layout.activity_uiwidget;
     }
 
     @Override
     public void initTitleData() {
-        topView.setTitleText(getString(R.string.homepage));
-        topView.setIvBackVisibility(View.GONE);
+        topView.setTitleText(getString(R.string.UIWidget));
     }
 
     @Override
     public void initAdapterData() {
         super.initAdapterData();
-        data.add("设计模式");
-        data.add("UI控件");
-        adapter = new MainAdapter(this, data);
+        data.add("刻录表");
+        MainAdapter adapter = new MainAdapter(this,data);
         lv.setAdapter(adapter);
-
     }
 
     @Override
@@ -63,11 +55,6 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
         switch (position){
             case 0:
 
-                startActivity(new Intent(this,PatternActivity.class));
-                break;
-            case 1:
-
-                startActivity(new Intent(this,UIWidgetActivity.class));
                 break;
         }
     }
