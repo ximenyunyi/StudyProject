@@ -62,11 +62,9 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-
                 startActivity(new Intent(this,PatternActivity.class));
                 break;
             case 1:
-
                 startActivity(new Intent(this,UIWidgetActivity.class));
                 break;
         }

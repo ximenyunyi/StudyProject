@@ -1,6 +1,7 @@
 package com.yyty.hao.studyproject.activity;
 
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -54,7 +55,7 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-
+                    startActivity(new Intent(this,SweepGradientActivity.class));
                 break;
         }
     }

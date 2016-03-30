@@ -19,10 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.PatternActivity" />
+        <activity android:name=".activity.UIWidgetActivity" />
         <activity
-            android:name=".activity.PatternActivity"/>
-        <activity
-            android:name=".activity.UIWidgetActivity"/>
+            android:name=".activity.SweepGradientActivity"
+            android:label="@string/title_activity_sweep_gradient"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

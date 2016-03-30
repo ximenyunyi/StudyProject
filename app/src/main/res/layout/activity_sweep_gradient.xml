@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/bt"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                />
+            <com.yyty.hao.studyproject.view.RecordingDiskView
+                android:id="@+id/rdv"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:totalRadian="360"
+                app:isNeedTitle="true"
+                app:content="0"
+                app:hintText="23"
+                app:titles="232"
+                app:startColor="@android:color/holo_red_dark"
+                app:centerColor="@android:color/holo_blue_light"
+                app:endColor="@android:color/holo_orange_dark"
+
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
