@@ -25,15 +25,16 @@
                 android:id="@+id/rdv"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                app:totalRadian="360"
+                app:totalRadian="270"
                 app:isNeedTitle="true"
                 app:content="0"
-                app:hintText="23"
-                app:titles="232"
+                app:hintText="km/m"
+                app:titles="当前速度"
                 app:startColor="@android:color/holo_red_dark"
                 app:centerColor="@android:color/holo_blue_light"
                 app:endColor="@android:color/holo_orange_dark"
-
+                app:isNeedRecordingDisk="true"
+                app:maxCount="120"
                 />
 
 

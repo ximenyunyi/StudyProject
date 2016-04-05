@@ -12,9 +12,9 @@
         <attr name="maxCount" format="integer"/>
         <attr name="circularBg" format="color|reference"/>
         <attr name="hintText" format="string|reference"/>
-        <attr name="hintTextBg" format="string|reference"/>
-        <attr name="titleBg" format="string|reference"/>
-        <attr name="contentBg" format="string|reference"/>
+        <attr name="hintTextBg" format="integer|reference"/>
+        <attr name="titleBg" format="integer|reference"/>
+        <attr name="contentBg" format="integer|reference"/>
     </declare-styleable>
 
 </resources>

@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.yyty.hao.studyproject.R;
+import com.yyty.hao.studyproject.bean.RecordingDiskBean;
 import com.yyty.hao.studyproject.util.ScreenUtil;
 
 /**
@@ -24,6 +25,18 @@ import com.yyty.hao.studyproject.util.ScreenUtil;
  */
 
 public class RecordingDiskView extends View{
+
+    private RecordingDiskBean mRecordingDiskBean;
+
+    /**
+     * @param mRecordingDiskBean 设置参数实体
+     */
+    public void setmRecordingDiskBean(RecordingDiskBean mRecordingDiskBean) {
+        this.mRecordingDiskBean = mRecordingDiskBean;
+        initParames();
+        initPaint();
+        invalidate();
+    }
 
     /**
      * 控件时间宽高
@@ -38,7 +51,7 @@ public class RecordingDiskView extends View{
     /**
      * 最大的值
      */
-    private int maxCount=100;
+    private int maxCount=120;
 
     /**
      * 标题
@@ -176,6 +189,10 @@ public class RecordingDiskView extends View{
      */
     private Paint shortLinePaint;
 
+    private int actualCount=0;
+
+    private float proportion;
+
     public RecordingDiskView(Context context) {
         super(context);
         initParames(null);
@@ -252,21 +269,21 @@ public class RecordingDiskView extends View{
         titlePaint = new Paint();
         titlePaint.setAntiAlias(true);
         titlePaint.setColor(titleBg);
-        titlePaint.setTextSize(15);
+        titlePaint.setTextSize(25);
         titlePaint.setTextAlign(Paint.Align.CENTER);
 
         //内容画笔
         contentPaint = new Paint();
         contentPaint.setAntiAlias(true);
         contentPaint.setColor(contentBg);
-        contentPaint.setTextSize(15);
+        contentPaint.setTextSize(55);
         contentPaint.setTextAlign(Paint.Align.CENTER);
 
         //提示画笔
         hintPaint = new Paint();
         hintPaint.setAntiAlias(true);
         hintPaint.setColor(titleBg);
-        hintPaint.setTextSize(15);
+        hintPaint.setTextSize(35);
         hintPaint.setTextAlign(Paint.Align.CENTER);
 
 
@@ -320,15 +337,15 @@ public class RecordingDiskView extends View{
         progressPaint.setShader(shader);
         canvas.drawArc(rectF,noDraw*9+90,currentRadian,false,progressPaint);
         if(isNeedTitle){
-            canvas.drawText(title,currentX,currentY- 2 * 15 / 3,titlePaint);
+            canvas.drawText(title,currentX,currentY-35*2,titlePaint);
         }
+        canvas.drawText(actualCount+"",currentX,currentY,contentPaint);
+        canvas.drawText(hintText,currentX,currentY+35*2,hintPaint);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //预期控件最小值
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
@@ -373,26 +390,67 @@ public class RecordingDiskView extends View{
         }
 
     }
-    public void setCurrentRadian(int currentRadian){
-        if(currentRadian>=totalRadian){
-           this.currentRadian= totalRadian;
+
+    /**
+     * @param count 设置进度条实际大小
+     */
+    public void setActualCount(int count){
+
+        proportion = totalRadian/(float)maxCount;
+        if(count>=maxCount){
+           this.actualCount= maxCount;
         }else{
-            this.currentRadian=currentRadian;
+            this.actualCount=count;
         }
         changeProgressUI();
     }
 
-    public void changeProgressUI(){
-        ValueAnimator animator=ValueAnimator.ofInt(0, currentRadian);
+    /**
+     * 修改进度条
+     */
+    private void changeProgressUI(){
+        ValueAnimator animator=ValueAnimator.ofInt(0, actualCount);
         animator.setDuration(500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                int value= (int) animation.getAnimatedValue();
-                RecordingDiskView.this.currentRadian=value;
+                RecordingDiskView.this.currentRadian= (int) (value*proportion+0.5f);
+                RecordingDiskView.this.actualCount=value;
                 invalidate();
             }
         });
         animator.start();
+    }
+
+    /**
+     * 根据实体初始化控件参数
+     */
+    private void initParames(){
+        if(mRecordingDiskBean==null){
+            return;
+        }
+        //圆环渐变色
+        gradientColor=new int[]{
+                mRecordingDiskBean.getStartColor()!=0?mRecordingDiskBean.getStartColor():Color.GREEN,
+                mRecordingDiskBean.getCenterColor()!=0?mRecordingDiskBean.getCenterColor():Color.YELLOW,
+                mRecordingDiskBean.getEndColor()!=0?mRecordingDiskBean.getEndColor():Color.RED,
+                };
+        //圆环的最大度数
+        this.totalRadian=mRecordingDiskBean.getTotalRadian();
+        //文本内容以及颜色
+        this.title=mRecordingDiskBean.getTitles();
+        this.content=mRecordingDiskBean.getContent();
+        this.hintText=mRecordingDiskBean.getHintText();
+        this.titleBg=mRecordingDiskBean.getTitleBg();
+        this.contentBg=mRecordingDiskBean.getCircularBg();
+        this.hintTextBg=mRecordingDiskBean.getHintTextBg();
+
+        this.isNeedTitle=mRecordingDiskBean.isNeedTitle();
+        this.isNeedRecordingDisk=mRecordingDiskBean.isNeedRecordingDisk();
+
+        this.circularBg=mRecordingDiskBean.getCircularBg();
+        this.maxCount=mRecordingDiskBean.getMaxCount();
+
     }
 }

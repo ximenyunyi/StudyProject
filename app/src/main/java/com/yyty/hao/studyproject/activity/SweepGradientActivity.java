@@ -52,7 +52,7 @@ public class SweepGradientActivity extends ABaseActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt:
-                rdv.setCurrentRadian(250);
+                rdv.setActualCount(100);
                 break;
         }
     }
