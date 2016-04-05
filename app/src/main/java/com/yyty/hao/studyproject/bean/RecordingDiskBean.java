@@ -37,6 +37,7 @@ public class RecordingDiskBean {
 
     private int contentBg;
 
+    private int actualCount;
 
     public int getStartColor() {
         return startColor;
@@ -148,5 +149,13 @@ public class RecordingDiskBean {
 
     public void setContentBg(int contentBg) {
         this.contentBg = contentBg;
+    }
+
+    public int getActualCount() {
+        return actualCount;
+    }
+
+    public void setActualCount(int actualCount) {
+        this.actualCount = actualCount;
     }
 }

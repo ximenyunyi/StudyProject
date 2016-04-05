@@ -36,6 +36,7 @@ public class RecordingDiskView extends View{
         initParames();
         initPaint();
         invalidate();
+        changeProgressUI();
     }
 
     /**
@@ -339,8 +340,8 @@ public class RecordingDiskView extends View{
         if(isNeedTitle){
             canvas.drawText(title,currentX,currentY-35*2,titlePaint);
         }
-        canvas.drawText(actualCount+"",currentX,currentY,contentPaint);
-        canvas.drawText(hintText,currentX,currentY+35*2,hintPaint);
+        canvas.drawText(actualCount + "", currentX, currentY, contentPaint);
+        canvas.drawText(hintText, currentX, currentY + 35 * 2, hintPaint);
     }
 
     @Override
@@ -409,6 +410,9 @@ public class RecordingDiskView extends View{
      * 修改进度条
      */
     private void changeProgressUI(){
+        if(actualCount==0){
+          return;
+        }
         ValueAnimator animator=ValueAnimator.ofInt(0, actualCount);
         animator.setDuration(500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -451,6 +455,6 @@ public class RecordingDiskView extends View{
 
         this.circularBg=mRecordingDiskBean.getCircularBg();
         this.maxCount=mRecordingDiskBean.getMaxCount();
-
+        this.actualCount=mRecordingDiskBean.getActualCount();
     }
 }
