@@ -40,7 +40,7 @@ public class SweepGradientActivity extends ABaseActivity implements View.OnClick
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_sweep_gradient;
+        return R.layout.act_sweep_gradient;
     }
 
     @Override

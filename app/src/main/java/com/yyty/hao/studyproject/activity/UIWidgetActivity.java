@@ -35,7 +35,7 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_uiwidget;
+        return R.layout.act_uiwidget;
     }
 
     @Override

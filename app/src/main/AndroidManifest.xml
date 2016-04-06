@@ -24,6 +24,10 @@
         <activity
             android:name=".activity.SweepGradientActivity"
             android:label="@string/title_activity_sweep_gradient"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.JniActivity"
+            android:label="@string/title_activity_jni"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

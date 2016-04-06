@@ -5,4 +5,5 @@
     <string name="patternStr">设计模式</string>
     <string name="UIWidget">UI控件</string>
     <string name="title_activity_sweep_gradient">SweepGradientActivity</string>
+    <string name="title_activity_jni">JniActivity</string>
 </resources>
