@@ -47,7 +47,7 @@ public class JniActivity extends ABaseActivity implements AdapterView.OnItemClic
     @Override
     public void initAdapterData() {
         super.initAdapterData();
-        data.add("刻录表");
+        data.add("FirstJni");
         MainAdapter adapter = new MainAdapter(this,data);
         lv.setAdapter(adapter);
     }
@@ -56,7 +56,7 @@ public class JniActivity extends ABaseActivity implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-                startActivity(new Intent(this,SweepGradientActivity.class));
+                startActivity(new Intent(this,FirstJniActivity.class));
                 break;
         }
     }

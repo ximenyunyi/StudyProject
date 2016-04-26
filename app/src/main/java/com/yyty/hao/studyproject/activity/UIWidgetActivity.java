@@ -47,6 +47,7 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
     public void initAdapterData() {
         super.initAdapterData();
         data.add("刻录表");
+        data.add("回弹的Scrollview");
         MainAdapter adapter = new MainAdapter(this,data);
         lv.setAdapter(adapter);
     }
@@ -55,8 +56,10 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-                    startActivity(new Intent(this,SweepGradientActivity.class));
+                startActivity(new Intent(this,SweepGradientActivity.class));
                 break;
+            case 1:
+                startActivity(new Intent(this,SpringBackActivity.class));
         }
     }
 }

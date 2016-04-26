@@ -18,8 +18,7 @@
             android:orientation="vertical">
             <Button
                 android:id="@+id/bt"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                style="@style/bt_style"
                 />
             <com.yyty.hao.studyproject.view.RecordingDiskView
                 android:id="@+id/rdv"

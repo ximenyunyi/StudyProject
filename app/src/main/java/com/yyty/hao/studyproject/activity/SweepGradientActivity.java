@@ -45,7 +45,7 @@ public class SweepGradientActivity extends ABaseActivity implements View.OnClick
 
     @Override
     public void initTitleData() {
-
+        topView.setTitleText(getString(R.string.sweep_gradient));
     }
 
     @Override

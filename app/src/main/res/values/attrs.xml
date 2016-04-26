@@ -16,5 +16,10 @@
         <attr name="titleBg" format="integer|reference"/>
         <attr name="contentBg" format="integer|reference"/>
     </declare-styleable>
+    <declare-styleable name="SpringBackScrollView" >
+        <attr name="header" format="reference" />
+        <attr name="headerHeight" format="dimension" />
+        <attr name="headerVisibleHeight" format="dimension" />
+    </declare-styleable>
 
 </resources>
