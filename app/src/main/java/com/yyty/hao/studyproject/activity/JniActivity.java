@@ -11,8 +11,15 @@ import com.yyty.hao.studyproject.abstracts.ABaseActivity;
 import com.yyty.hao.studyproject.adapter.MainAdapter;
 import com.yyty.hao.studyproject.view.TopView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JniActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
 
+    /**
+     * 适配器数据源
+     */
+    public List<String> data=new ArrayList<String>();
 
     private ListView lv;
 
@@ -46,7 +53,7 @@ public class JniActivity extends ABaseActivity implements AdapterView.OnItemClic
 
     @Override
     public void initAdapterData() {
-        super.initAdapterData();
+
         data.add("FirstJni");
         MainAdapter adapter = new MainAdapter(this,data);
         lv.setAdapter(adapter);

@@ -15,20 +15,21 @@ import java.util.List;
 /**
  *   首页适配器
  */
-public class MainAdapter extends ABaseAdapter<Object> {
+public class MainAdapter extends ABaseAdapter<String> {
 
-    public MainAdapter(Context context, List<Object> data) {
+    public MainAdapter(Context context, List<String> data) {
         super(context, data);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = View.inflate(context, R.layout.item_main, null);
-        }
+    public void processeItemData(View convertView, int position) {
         TextView tv_content = ViewHolder.get(convertView, R.id.tv_content);
-        String content = (String) getItem(position);
+        String content = getItem(position);
         tv_content.setText(content);
-        return convertView;
+    }
+
+    @Override
+    public int initItemLayout() {
+        return R.layout.item_main;
     }
 }

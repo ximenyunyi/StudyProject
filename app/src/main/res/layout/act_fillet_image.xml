@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+  >
+    <include layout="@layout/layout_title" />
+
+    <com.yyty.hao.studyproject.view.FilletImageView
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        app:radiusX="10"
+        app:radiusY="10"
+        app:shaper="rectangle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/lsq_style_default_filter_normal"
+        />
+    <com.yyty.hao.studyproject.view.FilletImageView
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    app:shaper="circular"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:src="@drawable/lsq_style_default_filter_normal"
+    app:isNeedRing="true"
+    app:ringColor="#E1E1E1"
+    />
+    <com.yyty.hao.studyproject.view.FilletImageView
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        app:shaper="circular"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/lsq_style_default_filter_normal"
+        />
+
+</LinearLayout>

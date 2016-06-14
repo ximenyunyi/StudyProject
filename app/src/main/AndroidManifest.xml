@@ -33,7 +33,8 @@
             android:name=".activity.FirstJniActivity"
             android:label="@string/title_activity_first_jni"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.SpringBackActivity"></activity>
+        <activity android:name=".activity.SpringBackActivity" />
+        <activity android:name=".activity.FilletImageActivity"></activity>
     </application>
 
 </manifest>

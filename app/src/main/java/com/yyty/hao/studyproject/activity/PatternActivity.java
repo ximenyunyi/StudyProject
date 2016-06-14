@@ -3,6 +3,8 @@ package com.yyty.hao.studyproject.activity;
 
 import com.yyty.hao.studyproject.R;
 import com.yyty.hao.studyproject.abstracts.ABaseActivity;
+import com.yyty.hao.studyproject.interfaces.IPattern;
+import com.yyty.hao.studyproject.pattern.ProxyPattern;
 import com.yyty.hao.studyproject.view.TopView;
 
 /**
@@ -17,7 +19,8 @@ public class PatternActivity extends ABaseActivity {
 
     @Override
     public void initData() {
-
+        IPattern  iPattern=new ProxyPattern();
+        iPattern.show();
     }
 
     @Override

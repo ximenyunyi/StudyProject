@@ -1,8 +1,0 @@
-//
-// Created by yyty2 on 2016/4/6.
-//
-
-#ifndef STUDYPROJECT_HELLO_JNI_H
-#define STUDYPROJECT_HELLO_JNI_H
-
-#endif //STUDYPROJECT_HELLO_JNI_H

@@ -22,4 +22,39 @@
         <attr name="headerVisibleHeight" format="dimension" />
     </declare-styleable>
 
+
+
+    <declare-styleable name="EffectiveShapeView">
+        <attr name="shape" format="integer">
+            <enum name="circle" value="1"/>
+            <enum name="rectangle" value="2"/>
+            <enum name="round_rectangle" value="3"/>
+            <enum name="square" value="4"/>
+            <enum name="polygon" value="5"/>
+        </attr>
+        <attr name="decorations_direction" format="integer">
+            <enum name="left_top" value="1"/>
+            <enum name="left_bottom" value="2"/>
+            <enum name="right_top" value="3"/>
+            <enum name="right_bottom" value="4"/>
+        </attr>
+
+        <attr name="decorations_src" format="reference"/>
+        <attr name="radius_x" format="float"/>
+        <attr name="radius_y" format="float"/>
+        <attr name="sides" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="FilletImageView">
+        <attr name="radiusX" format="float"/>
+        <attr name="radiusY" format="float"/>
+        <attr name="imageSource" format="reference"/>
+        <attr name="shaper" format="enum">
+            <enum name="circular" value="0"/>
+            <enum name="rectangle" value="1"/>
+        </attr>
+        <attr name="isNeedRing" format="boolean"/>
+        <attr name="ringColor" format="color|reference"/>
+    </declare-styleable>
+
 </resources>

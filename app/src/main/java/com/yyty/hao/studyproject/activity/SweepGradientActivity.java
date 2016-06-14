@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.yyty.hao.studyproject.R;
 import com.yyty.hao.studyproject.abstracts.ABaseActivity;
+import com.yyty.hao.studyproject.jni.JniTest;
 import com.yyty.hao.studyproject.view.RecordingDiskView;
 import com.yyty.hao.studyproject.view.TopView;
 
@@ -25,7 +26,8 @@ public class SweepGradientActivity extends ABaseActivity implements View.OnClick
         bt = (Button) this.findViewById(R.id.bt);
 
         rdv = (RecordingDiskView) this.findViewById(R.id.rdv);
-
+        JniTest jni=new JniTest();
+        bt.setText(jni.test());
     }
 
     @Override

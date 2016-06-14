@@ -12,7 +12,7 @@ import java.util.logging.Handler;
 /**
  * @param <T>通用适配器
  */
-public class ABaseAdapter<T> extends BaseAdapter {
+public abstract class ABaseAdapter<T> extends BaseAdapter {
 
     /**
      * 数据源
@@ -29,13 +29,14 @@ public class ABaseAdapter<T> extends BaseAdapter {
      */
     public Handler handler;
 
+
     /**
-     * @param context 一般构造
+     * @param context
      * @param data
      */
-    public ABaseAdapter(Context context, List<T> data) {
-        this.context=context;
-        this.data=data;
+    public ABaseAdapter(Context context,List<T> data) {
+        this.data = data;
+        this.context = context;
     }
 
     /**
@@ -53,7 +54,7 @@ public class ABaseAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public T getItem(int position) {
         return data.get(position);
     }
 
@@ -64,6 +65,21 @@ public class ABaseAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = View.inflate(context, initItemLayout(), null);
+        }
+        processeItemData(convertView,position);
         return convertView;
     }
+
+    /**
+     * @param convertView  处理item的数据
+     * @param position
+     */
+    public abstract void processeItemData(View convertView,int position);
+
+    /**
+     * @return  item的布局
+     */
+    public abstract int initItemLayout();
 }

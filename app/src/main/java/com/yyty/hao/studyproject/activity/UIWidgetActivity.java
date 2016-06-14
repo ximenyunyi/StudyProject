@@ -11,8 +11,11 @@ import com.yyty.hao.studyproject.abstracts.ABaseActivity;
 import com.yyty.hao.studyproject.adapter.MainAdapter;
 import com.yyty.hao.studyproject.view.TopView;
 
-public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
+import java.util.ArrayList;
+import java.util.List;
 
+public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
+    private List<String> data=new ArrayList<String>();
     private ListView lv;
 
     private MainAdapter adapter;
@@ -45,9 +48,9 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
 
     @Override
     public void initAdapterData() {
-        super.initAdapterData();
         data.add("刻录表");
         data.add("回弹的Scrollview");
+        data.add("圆角图片");
         MainAdapter adapter = new MainAdapter(this,data);
         lv.setAdapter(adapter);
     }
@@ -60,6 +63,10 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
                 break;
             case 1:
                 startActivity(new Intent(this,SpringBackActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(this,FilletImageActivity.class));
+                break;
         }
     }
 }

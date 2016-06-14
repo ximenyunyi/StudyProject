@@ -11,12 +11,16 @@ import com.yyty.hao.studyproject.abstracts.ABaseActivity;
 import com.yyty.hao.studyproject.adapter.MainAdapter;
 import com.yyty.hao.studyproject.view.TopView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
     //this is a listView write by Gao
     private ListView lv;
     //this is a adapter
     private MainAdapter adapter;
 
+    private List<String> data=new ArrayList<String>();
 
     @Override
     public void initView() {
@@ -46,7 +50,7 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
 
     @Override
     public void initAdapterData() {
-        super.initAdapterData();
+
         data.add("设计模式");
         data.add("UI控件");
         data.add("JNI");

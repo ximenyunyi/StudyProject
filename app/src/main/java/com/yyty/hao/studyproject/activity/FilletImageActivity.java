@@ -1,25 +1,16 @@
 package com.yyty.hao.studyproject.activity;
 
-import android.view.View;
-import android.view.animation.Animation;
-import android.widget.Toast;
 
 import com.yyty.hao.studyproject.R;
 import com.yyty.hao.studyproject.abstracts.ABaseActivity;
 import com.yyty.hao.studyproject.view.TopView;
 
-public class FirstJniActivity extends ABaseActivity {
-
-    private native String printJNI(String inputStr);
-    static {
-        System.loadLibrary("hello-jni");
-    }
-
+public class FilletImageActivity extends ABaseActivity {
 
     @Override
     public void initView() {
-
         topView= (TopView) this.findViewById(R.id.top_view);
+
     }
 
     @Override
@@ -34,15 +25,11 @@ public class FirstJniActivity extends ABaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.act_first_jni;
+        return R.layout.act_fillet_image;
     }
 
     @Override
     public void initTitleData() {
-        topView.setTitleText("FirstJNI");
-    }
-
-    public void show(View v){
-        Toast.makeText(this,"ddd",Toast.LENGTH_LONG).show();
+        topView.setTitleText("圆角图片");
     }
 }

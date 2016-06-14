@@ -14,11 +14,6 @@ import java.util.List;
  */
 public abstract class ABaseActivity extends Activity {
 
-    /**
-     * 适配器数据源
-     */
-    public List<Object> data;
-
     public TopView topView;
 
     @Override
@@ -52,9 +47,7 @@ public abstract class ABaseActivity extends Activity {
     /**
      * 初始化适配器数据
      */
-    public void initAdapterData(){
-        data=new ArrayList<Object>();
-    }
+    public void initAdapterData(){};
 
     /**
      * @return布局ID
