@@ -14,7 +14,7 @@ import com.yyty.hao.studyproject.view.TopView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
+public class CommonKnowledgeActivity extends ABaseActivity implements AdapterView.OnItemClickListener {
 
     private ListView lv;
 
@@ -39,22 +39,18 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
 
     @Override
     public int getLayoutId() {
-        return R.layout.act_main;
+        return R.layout.act_common_knowledge;
     }
 
     @Override
     public void initTitleData() {
-        topView.setTitleText(getString(R.string.homepage));
-        topView.setIvBackVisibility(View.GONE);
+        topView.setTitleText("常用知识");
     }
 
     @Override
     public void initAdapterData() {
 
-        data.add("设计模式");
-        data.add("UI控件");
-        data.add("JNI");
-        data.add("基本知识");
+        data.add("颜色矩阵");
         adapter = new MainAdapter(this, data);
         lv.setAdapter(adapter);
 
@@ -64,16 +60,7 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-                startActivity(new Intent(this,PatternActivity.class));
-                break;
-            case 1:
-                startActivity(new Intent(this,UIWidgetActivity.class));
-                break;
-            case 2:
-                startActivity(new Intent(this,JniActivity.class));
-                break;
-            case 3:
-                 startActivity(new Intent(this,CommonKnowledgeActivity.class));
+                startActivity(new Intent(this,MatrixActivity.class));
                 break;
         }
     }

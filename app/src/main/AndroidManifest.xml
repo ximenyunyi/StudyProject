@@ -34,7 +34,9 @@
             android:label="@string/title_activity_first_jni"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.SpringBackActivity" />
-        <activity android:name=".activity.FilletImageActivity"></activity>
+        <activity android:name=".activity.FilletImageActivity" />
+        <activity android:name=".activity.MatrixActivity" />
+        <activity android:name=".activity.CommonKnowledgeActivity"></activity>
     </application>
 
 </manifest>
