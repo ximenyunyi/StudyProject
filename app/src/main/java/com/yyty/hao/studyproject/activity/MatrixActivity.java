@@ -27,7 +27,7 @@ public class MatrixActivity extends ABaseActivity {
     /**
      * rfg数值
      */
-    private float tone=50;
+    private float tone=100;
 
     /**
      * 饱和对
@@ -58,9 +58,9 @@ public class MatrixActivity extends ABaseActivity {
     @Override
     public void initData() {
         initBitmap();
-        sb_R.setProgress((int) tone);
         sb_G.setProgress((int) saturation);
         sb_B.setProgress((int) brightness);
+        sb_R.setProgress((int) tone);
 
     }
 
@@ -124,8 +124,8 @@ public class MatrixActivity extends ABaseActivity {
         //色调
         ColorMatrix toneMatrix=new ColorMatrix();
         //取值范围-180~180 值为“0”为原始色调
-        toneMatrix.setRotate(0,tone);
-        toneMatrix.setRotate(1,tone);
+//        toneMatrix.setRotate(0,tone);
+//        toneMatrix.setRotate(1,tone);
         toneMatrix.setRotate(2,tone);
 
         //饱和对
@@ -140,7 +140,7 @@ public class MatrixActivity extends ABaseActivity {
         //混合
         ColorMatrix colorMatrix=new ColorMatrix();
         colorMatrix.postConcat(toneMatrix);
-        colorMatrix.postConcat(saturationMatrix);
+//        colorMatrix.postConcat(saturationMatrix);
         colorMatrix.postConcat(brightnessMatrix);
         paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         canvas.drawBitmap(originalBitmap,0,0,paint);
