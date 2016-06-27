@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
   >
-    <include layout="@layout/layout_title" />
 
     <com.yyty.hao.studyproject.view.FilletImageView
         android:layout_width="100dp"

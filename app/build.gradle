@@ -7,7 +7,7 @@ model {
 
         defaultConfig.with {
             applicationId = "com.yyty.hao.studyproject"
-            minSdkVersion.apiLevel = 10
+            minSdkVersion.apiLevel = 18
             targetSdkVersion.apiLevel = 23
         }
     }

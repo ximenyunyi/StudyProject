@@ -24,7 +24,6 @@ public class CommonKnowledgeActivity extends ABaseActivity implements AdapterVie
 
     @Override
     public void initView() {
-        topView = (TopView) this.findViewById(R.id.top_view);
         lv = (ListView) this.findViewById(R.id.lv);
     }
 

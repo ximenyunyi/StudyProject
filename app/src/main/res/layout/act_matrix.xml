@@ -7,7 +7,6 @@
 
     tools:context="com.yyty.hao.studyproject.activity.MatrixActivity">
 
-    <include layout="@layout/layout_title" />
 
     <ImageView
         android:id="@+id/iv"

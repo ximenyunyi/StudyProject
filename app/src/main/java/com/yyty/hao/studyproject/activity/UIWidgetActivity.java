@@ -23,7 +23,6 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
     @Override
     public void initView() {
         lv= (ListView) this.findViewById(R.id.lv);
-        topView= (TopView) this.findViewById(R.id.top_view);
     }
 
     @Override

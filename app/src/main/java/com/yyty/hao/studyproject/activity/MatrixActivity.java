@@ -14,7 +14,6 @@ import android.widget.SeekBar;
 
 import com.yyty.hao.studyproject.R;
 import com.yyty.hao.studyproject.abstracts.ABaseActivity;
-import com.yyty.hao.studyproject.view.TopView;
 
 public class MatrixActivity extends ABaseActivity {
 
@@ -46,7 +45,6 @@ public class MatrixActivity extends ABaseActivity {
 
     @Override
     public void initView() {
-        topView= (TopView) this.findViewById(R.id.top_view);
 
         iv = (ImageView) this.findViewById(R.id.iv);
         sb_R = (SeekBar) this.findViewById(R.id.sb_r);

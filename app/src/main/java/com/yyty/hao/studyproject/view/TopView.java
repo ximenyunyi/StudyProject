@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.yyty.hao.studyproject.R;
 
-public class TopView extends FrameLayout implements View.OnClickListener {
+public class TopView extends FrameLayout{
 
 	// 返回按钮
 	private ImageView ivBack;
@@ -44,15 +44,8 @@ public class TopView extends FrameLayout implements View.OnClickListener {
 	private void init() {
 		View inflate = LayoutInflater.from(getContext()).inflate(R.layout.view_top, this);
 		initView();
-		initOnclickListern();
 	}
 
-	/**
-	 * 设置监听事件
-	 */
-	private void initOnclickListern() {
-		ivBack.setOnClickListener(this);
-	}
 
 
 	/**
@@ -126,12 +119,8 @@ public class TopView extends FrameLayout implements View.OnClickListener {
 		tvRight.setTextColor(color);
 	}
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()){
-			case R.id.iv_back:
-				((Activity)getContext()).finish();
-				break;
-		}
+	public void setOnBackClickListern(OnClickListener listener){
+		ivBack.setOnClickListener(listener);
 	}
+
 }

@@ -21,7 +21,6 @@ public class SweepGradientActivity extends ABaseActivity implements View.OnClick
 
     @Override
     public void initView() {
-       topView= (TopView) this.findViewById(R.id.top_view);
 
         bt = (Button) this.findViewById(R.id.bt);
 

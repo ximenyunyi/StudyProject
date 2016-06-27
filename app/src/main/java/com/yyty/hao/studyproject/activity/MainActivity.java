@@ -24,7 +24,6 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
 
     @Override
     public void initView() {
-        topView = (TopView) this.findViewById(R.id.top_view);
         lv = (ListView) this.findViewById(R.id.lv);
     }
 
@@ -55,6 +54,7 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
         data.add("UI控件");
         data.add("JNI");
         data.add("基本知识");
+        data.add("动画");
         adapter = new MainAdapter(this, data);
         lv.setAdapter(adapter);
 

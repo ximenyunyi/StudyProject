@@ -28,7 +28,6 @@ public class SpringBackActivity extends ABaseActivity {
 
     @Override
     public void initView() {
-        topView= (TopView) this.findViewById(R.id.top_view);
 
         mScrollView = (SpringBackScrollView) findViewById(R.id.scroll_view);
 

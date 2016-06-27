@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:background="#80ffffff">
 
-    <include layout="@layout/layout_title" />
 
     <ListView
         android:id="@+id/lv"
