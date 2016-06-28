@@ -67,5 +67,6 @@ public class UIWidgetActivity extends ABaseActivity implements AdapterView.OnIte
                 startActivity(new Intent(this,FilletImageActivity.class));
                 break;
         }
+        overridePendingTransition(R.anim.tr_in,R.anim.tr_out);
     }
 }

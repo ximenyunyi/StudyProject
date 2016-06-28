@@ -75,6 +75,10 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
             case 3:
                  startActivity(new Intent(this,CommonKnowledgeActivity.class));
                 break;
+            case 4:
+                startActivity(new Intent(this,AnimationActivity.class));
+                break;
         }
+        overridePendingTransition(R.anim.tr_in,R.anim.tr_out);
     }
 }
