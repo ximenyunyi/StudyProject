@@ -76,6 +76,7 @@ public abstract class ABaseActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     finish();
+                    overridePendingTransition(R.anim.tr_back_in,R.anim.tr_back_out);
                 }
             });
         }
