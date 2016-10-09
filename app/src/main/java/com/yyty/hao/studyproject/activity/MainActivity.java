@@ -25,6 +25,7 @@ public class MainActivity extends ABaseActivity implements AdapterView.OnItemCli
     @Override
     public void initView() {
         lv = (ListView) this.findViewById(R.id.lv);
+        //sysotoieowijeow
     }
 
     @Override
